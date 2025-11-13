@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Refugee Registration Form</h2>
+<p>Please fill out all the required fields with *</p>
+<form method="POST" action="{{ url_for('submit_form') }}">
+  <p><input type="text" name="name" placeholder="Full name" required></p>
+  <p><input type="text" name="country" placeholder="Country of origin" required></p>
+  <p><input type="number" name="age" placeholder="Age" required></p>
+  <p><select name="gender" placeholder="Gender"></p>
+        <option value="" disabled selected>Gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="prefer_not_to_say">Prefer not to say</option>
+  <p></select></p>
+  <p><button type="submit">Submit</button></p>
+</form>
+{% endblock %}
