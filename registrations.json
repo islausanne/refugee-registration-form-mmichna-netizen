@@ -4,5 +4,12 @@
     "country": "romania",
     "age": "4",
     "gender": "female"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "4",
+    "gender": "female"
   }
 ]

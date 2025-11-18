@@ -3,10 +3,14 @@
 <h2>Refugee Registration Form</h2>
 <p>Please fill out all the required fields with *</p>
 <form method="POST" action="{{ url_for('submit_form') }}">
-  <p><input type="text" name="name" placeholder="Full name" required></p>
-  <p><input type="text" name="country" placeholder="Country of origin" required></p>
-  <p><input type="number" name="age" placeholder="Age" required></p>
-  <p><select name="gender" placeholder="Gender"></p>
+    <label for="first_name">First Name:</label>
+    <p><input type="text" name="first_name" id = "first_name" required></p>
+
+    <label for="last_name">Last Name:</label>
+    <p><input type="text" name="last_name" id="last_name" required></p>
+    <p><input type="text" name="country" placeholder="Country of origin" required></p>
+    <p><input type="number" name="age" placeholder="Age" required min="1"></p>
+    <p><select name="gender" placeholder="Gender"></p>
         <option value="" disabled selected>Gender</option>
         <option value="female">Female</option>
         <option value="male">Male</option>
