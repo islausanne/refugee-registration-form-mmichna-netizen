@@ -11,5 +11,63 @@
     "country": "Switzerland",
     "age": "4",
     "gender": "female"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "6",
+    "gender": "female",
+    "date_of_birth": "2025-11-27"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "5",
+    "gender": "female",
+    "date_of_birth": "2025-12-05",
+    "email_address": "ahKBDSASBK"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "4",
+    "gender": "male",
+    "date_of_birth": "2025-11-08",
+    "email_address": "mmichna@islstudent.ch"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "3",
+    "gender": "male",
+    "date_of_birth": "2025-11-13",
+    "email_address": "mmichna@islstudent.ch"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "3",
+    "gender": "female",
+    "date_of_birth": "2025-11-21",
+    "languages_spoken": "French",
+    "email_address": "mmichna@islstudent.ch"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "8",
+    "gender": "female",
+    "date_of_birth": "2025-11-05",
+    "languages_spoken": "French",
+    "email_address": "mmichna@islstudent.ch",
+    "phone_number": "+41 79 105 58 06",
+    "current_address": "Chemin de Riant-Coin 31, La Conversion",
+    "postal_code": "1094"
   }
 ]

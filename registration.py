@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os
+import re
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Needed for flash messages
+
+# Email validation regex pattern
+EMAIL_REGEX = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 # Home route
 @app.route('/')
@@ -23,8 +27,18 @@ def submit_form():
     country = request.form['country']
     age = request.form['age']
     gender = request.form['gender']
+    date_of_birth = request.form['date_of_birth']
+    languages_spoken = request.form['languages_spoken']
+    email_address = request.form['email_address']
+    phone_number = request.form['phone_number']
+    current_address = request.form['current_address']
+    postal_code = request.form['postal_code']
 
-# Check if file exists
+    if not re.match(EMAIL_REGEX, email_address):
+        flash('Please enter a valid email address.')
+        return redirect(url_for('register'))
+
+    # Check if file exists
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
             data = json.load(file)
@@ -32,7 +46,7 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'first_name': first_name, 'last_name': last_name, 'country': country, 'age': age, 'gender': gender})
+    data.append({'first_name': first_name, 'last_name': last_name, 'country': country, 'age': age, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:

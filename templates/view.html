@@ -4,19 +4,31 @@
 {% if registrations %}
   <table>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Country</th>
-      <th>Age</th>
-      <th>Gender</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Languages spoken</th>
+        <th>Email Address</th>
+        <th>Phone number</th>
+        <th>Current Address</th>
+        <th>Postal code</th>
     </tr>
     {% for person in registrations %}
       <tr>
-          <td>{{ person.first_name }}</td>
+        <td>{{ person.first_name }}</td>
         <td>{{ person.last_name }}</td>
         <td>{{ person.country }}</td>
         <td>{{ person.age }}</td>
         <td>{{ person.gender }}</td>
+        <td>{{ person.date_of_birth }}</td>
+        <td>{{ person.languages_spoken}}</td>
+        <td>{{ person.email_address}}</td>
+        <td>{{ person.phone_number}}</td>
+        <td>{{ person.current_address}}</td>
+           <td>{{ person.postal_code}}</td>
       </tr>
     {% endfor %}
   </table>

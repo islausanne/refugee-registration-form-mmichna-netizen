@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Refugee Registration Form</h2>
-<p>Please fill out all the required fields with *</p>
+<p style="font-size: 20px;"> Please fill out all the required fields with *</p>
+<hr>
+<p style="font-size: 20px;">
+    <img src="static/person_icon.png" width="25" style="vertical-align: middle; margin-right: 8px">
+    Personal Information
+</p>
 <form method="POST" action="{{ url_for('submit_form') }}">
 
     <label for="first_name">First Name:</label>
@@ -10,14 +15,46 @@
     <label for="last_name">Last Name:</label>
     <p><input type="text" name="last_name" id="last_name" required></p>
 
-    <p><input type="text" name="country" placeholder="Country of origin" required></p>
-    <p><input type="number" name="age" placeholder="Age" required min="1"></p>
-    <p><select name="gender" placeholder="Gender"></p>
+    <label for="Country_of_origin">Country of Origin:</label>
+    <p><input type="text" name="country" id="Country_of_origin" required></p>
+
+    <label for="age">Age:</label>
+    <p><input type="number" name="age" id="age" required min="1"></p>
+
+    <label for="gender">Gender:</label>
+    <p><select name="gender" id="gender"></p>
         <option value="" disabled selected>Gender</option>
         <option value="female">Female</option>
         <option value="male">Male</option>
         <option value="prefer_not_to_say">Prefer not to say</option>
-  <p></select></p>
-  <p><button type="submit">Submit</button></p>
+    <p></select></p>
+
+    <label for="date_of_birth">Date of Birth:</label>
+    <p><input type="date" name="date_of_birth" id="date_of_birth" required></p>
+
+
+    <label for="languages_spoken">Languages Spoken:</label>
+    <p><input type="text" name="languages_spoken" id="languages_spoken" placeholder="eg. Arabic, French, English..." required></p><br>
+
+    <hr>
+
+<p style="font-size: 20px;">
+    <img src="static/phone_icon.png" width="25" style="vertical-align: middle; margin-right: 8px">
+    Contact Information
+</p>
+
+    <label for="email_address">Email Address:</label>
+    <p><input type="text" name="email_address" id="email_address" placeholder="eg. mail@example.com"required></p>
+
+    <label for="phone_number">Phone Number:</label>
+    <p><input type="text" name="phone_number" id="phone_number" placeholder="eg. +41 12 345 67 89"required></p>
+
+    <label for="current_address">Current Address:</label>
+    <p><input type="text" name="current_address" id="current_address" required></p>
+
+    <label for="postal_code">Postal Code:</label>
+    <p><input type="number" name="postal_code" id="postal_code" required min="1000" max="9999"></p>
+
+    <p><button type="submit">Submit</button></p>
 </form>
 {% endblock %}

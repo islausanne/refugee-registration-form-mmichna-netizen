@@ -12,8 +12,10 @@
   </style>
 </head>
 <body>
-    <h1>Refugee Registration</h1>
-    <img src="static/logo.png" width="15%">
+    <h1>
+        <img src="static/logo.png" width="15%" style="vertical-align: middle; margin-right: 8px">
+        Refugee Registration
+    </h1>
     <div style="padding: 10px"></div>
   <nav>
       <a href="/">Home</a>
@@ -25,7 +27,7 @@
     {% if messages %}
       <ul>
         {% for message in messages %}
-          <li style="color: green;">{{ message }}</li>
+          <li style="color: green">{{ message }}</li>
         {% endfor %}
       </ul>
     {% endif %}
