@@ -35,6 +35,8 @@ def submit_form():
     ec_phone_number=request.form['ec_phone_number']
     ec_email_address=request.form['ec_email_address']
     primary_needs=request.form['primary_needs']
+    special_needs=request.form['special_needs']
+    reason_refuge=request.form['reason_refuge']
 
     # Check if file exists
     if os.path.exists('registrations.json'):
@@ -44,7 +46,7 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'first_name': first_name, 'last_name': last_name, 'nationality': nationality, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code, 'relationship': relationship, 'ec_first_name': ec_first_name, 'ec_last_name': ec_last_name, 'ec_phone_number': ec_phone_number, 'ec_email_address': ec_email_address, 'primary_needs': primary_needs})
+    data.append({'first_name': first_name, 'last_name': last_name, 'nationality': nationality, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code, 'relationship': relationship, 'ec_first_name': ec_first_name, 'ec_last_name': ec_last_name, 'ec_phone_number': ec_phone_number, 'ec_email_address': ec_email_address, 'primary_needs': primary_needs, 'special_needs': special_needs, 'reason_refuge': reason_refuge})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:

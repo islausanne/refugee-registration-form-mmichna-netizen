@@ -23,13 +23,13 @@
 </p>
 <form method="POST" action="{{ url_for('submit_form') }}">
 
-    <label for="first_name">First Name:</label>
+    <label for="first_name">First Name:*</label>
     <input type="text" name="first_name" id = "first_name" required><br><br>
 
-    <label for="last_name">Last Name:</label>
+    <label for="last_name">Last Name:*</label>
     <input type="text" name="last_name" id="last_name" required><br><br>
 
-    <label for="nationality">Nationality:</label>
+    <label for="nationality">Nationality:*</label>
     <select class="form-select" autocomplete="country" id="nationality" name="nationality" required>
     <option selected disabled value="">select country</option>
     <option value="AF">Afghanistan</option>
@@ -286,7 +286,7 @@
     <option value="ZW">Zimbabwe</option>
     </select><br><br>
 
-    <label for="gender">Gender:</label>
+    <label for="gender">Gender:*</label>
     <select name="gender" id="gender" required>
         <option selected disabled value="">select gender</option>
         <option value="female">Female</option>
@@ -294,11 +294,11 @@
         <option value="prefer_not_to_say">Prefer not to say</option>
     </select><br><br>
 
-    <label for="date_of_birth">Date of Birth:</label>
+    <label for="date_of_birth">Date of Birth:*</label>
     <input type="date" name="date_of_birth" id="date_of_birth" required><br><br>
 
     <label for="languages_spoken">Languages Spoken:</label>
-    <input type="text" name="languages_spoken" id="languages_spoken" placeholder="eg. Arabic, French, English..." required><br><br><br>
+    <input type="text" name="languages_spoken" id="languages_spoken" placeholder="eg. Arabic, French, English..." ><br><br><br>
 
     <hr>
 
@@ -308,16 +308,16 @@
 </p>
 
     <label for="email_address">Email Address:</label>
-    <input type="email" name="email_address" id="email_address" placeholder="eg. mail@example.com"required><br><br>
+    <input type="email" name="email_address" id="email_address" placeholder="eg. mail@example.com"><br><br>
 
     <label for="phone_number">Phone Number:</label>
-    <input type="text" name="phone_number" id="phone_number" placeholder="eg. +41 12 345 67 89"required><br><br>
+    <input type="text" name="phone_number" id="phone_number" placeholder="eg. +41 12 345 67 89"><br><br>
 
-    <label for="current_address">Current Address:</label>
+    <label for="current_address">Current Address:*</label>
     <input type="text" name="current_address" id="current_address" required><br><br>
 
     <label for="postal_code">Postal Code:</label>
-    <input type="text" name="postal_code" id="postal_code" required><br><br>
+    <input type="text" name="postal_code" id="postal_code" ><br><br>
 
     <hr>
 
@@ -326,7 +326,7 @@
     Emergency Contact
 </p>
 
-    <label for="relationship">Relationship:</label>
+    <label for="relationship">Relationship:*</label>
     <select name="relationship" id="relationship" required>
         <option selected disabled value="">select relationship</option>
         <option value="mother">Mother</option>
@@ -335,17 +335,17 @@
         <option value="spouse">Spouse</option>
     </select><br><br>
 
-    <label for="ec_first_name">First Name:</label>
+    <label for="ec_first_name">First Name:*</label>
     <input type="text" name="ec_first_name" id = "ec_first_name" required><br><br>
 
-    <label for="ec_last_name">Last Name:</label>
+    <label for="ec_last_name">Last Name:*</label>
     <input type="text" name="ec_last_name" id="ec_last_name" required><br><br>
 
     <label for="ec_phone_number">Phone Number:</label>
-    <input type="text" name="ec_phone_number" id="ec_phone_number" placeholder="eg. +41 12 345 67 89"required><br><br>
+    <input type="text" name="ec_phone_number" id="ec_phone_number" placeholder="eg. +41 12 345 67 89"><br><br>
 
     <label for="ec_email_address">Email Address:</label>
-    <input type="email" name="ec_email_address" id="ec_email_address" placeholder="eg. mail@example.com"required><br><br>
+    <input type="email" name="ec_email_address" id="ec_email_address" placeholder="eg. mail@example.com"><br><br>
 
     <hr>
 
@@ -354,12 +354,18 @@
     Needs and Additional Information
 </p>
 
-    <label for="primary_needs">Primary Needs:</label>
+    <label for="primary_needs">Primary Needs:*</label>
     <p><textarea name="primary_needs" id="primary_needs" rows="1" cols="100" placeholder="eg. food, water, shelter..." required></textarea></p>
+
+    <label for="special_requirements">Special Requirements:</label>
+    <p><textarea name="special_requirements" id="special_requirements" rows="1" cols="100" placeholder="if applicable" ></textarea></p>
+
+    <label for="reason_refuge">Reason for Seeking Refuge:*</label>
+    <p><textarea name="reason_refuge" id="reason_refuge" rows="2" cols="100" placeholder="100 characters minimum" required minlength="100"></textarea></p>
 
     <hr>
 
-    <p><button type="submit">Submit</button></p>
+    <p><button type="submit" style="background-color: blue; color: white;">Submit</button></p>
 </form>
 </body>
 {% endblock %}

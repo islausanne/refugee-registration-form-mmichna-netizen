@@ -20,6 +20,8 @@
         <th>Emergency Contact Phone Number</th>
         <th>Emergency Contact Email Address</th>
         <th>Primary needs</th>
+        <th>Special requirements</th>
+        <th>Reason For seeking Refuge</th>
     </tr>
     {% for person in registrations %}
       <tr>
@@ -39,6 +41,8 @@
         <td>{{ person.ec_phone_number}}</td>
         <td>{{ person.ec_email_address}}</td>
           <td>{{ person.primary_needs}}</td>
+          <td>{{ person.special_requirements}}</td>
+          <td>{{ person.reason_refuge}}</td>
       </tr>
     {% endfor %}
   </table>
