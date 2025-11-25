@@ -69,5 +69,33 @@
     "phone_number": "+41 79 105 58 06",
     "current_address": "Chemin de Riant-Coin 31, La Conversion",
     "postal_code": "1094"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "country": "Switzerland",
+    "age": "3",
+    "gender": "female",
+    "date_of_birth": "2025-11-06",
+    "languages_spoken": "French",
+    "email_address": "mmichna@islstudent.ch",
+    "phone_number": "+41 79 105 58 06",
+    "current_address": "      ",
+    "postal_code": "1093"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "nationality": "french",
+    "gender": "female",
+    "date_of_birth": "2025-11-14",
+    "languages_spoken": "French",
+    "email_address": "mmichna@islstudent.ch",
+    "phone_number": "+41 79 105 58 06",
+    "current_address": "Chemin de Riant-Coin 31, La Conversion",
+    "postal_code": "1093",
+    "relationship": "father",
+    "ec_first_name": "Marta",
+    "ec_last_name": "Michna"
   }
 ]

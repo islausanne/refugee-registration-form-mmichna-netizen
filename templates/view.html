@@ -7,7 +7,6 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Country</th>
-        <th>Age</th>
         <th>Gender</th>
         <th>Date of birth</th>
         <th>Languages spoken</th>
@@ -15,20 +14,31 @@
         <th>Phone number</th>
         <th>Current Address</th>
         <th>Postal code</th>
+        <th>Relationship</th>
+        <th>Emergency Contact First Name</th>
+        <th>Emergency Contact Last Name</th>
+        <th>Emergency Contact Phone Number</th>
+        <th>Emergency Contact Email Address</th>
+        <th>Primary needs</th>
     </tr>
     {% for person in registrations %}
       <tr>
         <td>{{ person.first_name }}</td>
         <td>{{ person.last_name }}</td>
-        <td>{{ person.country }}</td>
-        <td>{{ person.age }}</td>
+        <td>{{ person.nationality }}</td>
         <td>{{ person.gender }}</td>
         <td>{{ person.date_of_birth }}</td>
         <td>{{ person.languages_spoken}}</td>
         <td>{{ person.email_address}}</td>
         <td>{{ person.phone_number}}</td>
         <td>{{ person.current_address}}</td>
-           <td>{{ person.postal_code}}</td>
+        <td>{{ person.postal_code}}</td>
+        <td>{{ person.relationship}}</td>
+        <td>{{ person.ec_first_name}}</td>
+        <td>{{ person.ec_last_name}}</td>
+        <td>{{ person.ec_phone_number}}</td>
+        <td>{{ person.ec_email_address}}</td>
+          <td>{{ person.primary_needs}}</td>
       </tr>
     {% endfor %}
   </table>

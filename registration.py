@@ -6,9 +6,6 @@ import re
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Needed for flash messages
 
-# Email validation regex pattern
-EMAIL_REGEX = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-
 # Home route
 @app.route('/')
 def index():
@@ -24,8 +21,7 @@ def register():
 def submit_form():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    country = request.form['country']
-    age = request.form['age']
+    nationality = request.form['nationality']
     gender = request.form['gender']
     date_of_birth = request.form['date_of_birth']
     languages_spoken = request.form['languages_spoken']
@@ -33,10 +29,12 @@ def submit_form():
     phone_number = request.form['phone_number']
     current_address = request.form['current_address']
     postal_code = request.form['postal_code']
-
-    if not re.match(EMAIL_REGEX, email_address):
-        flash('Please enter a valid email address.')
-        return redirect(url_for('register'))
+    relationship = request.form['relationship']
+    ec_first_name=request.form['ec_first_name']
+    ec_last_name=request.form['ec_last_name']
+    ec_phone_number=request.form['ec_phone_number']
+    ec_email_address=request.form['ec_email_address']
+    primary_needs=request.form['primary_needs']
 
     # Check if file exists
     if os.path.exists('registrations.json'):
@@ -46,7 +44,7 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'first_name': first_name, 'last_name': last_name, 'country': country, 'age': age, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code})
+    data.append({'first_name': first_name, 'last_name': last_name, 'nationality': nationality, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code, 'relationship': relationship, 'ec_first_name': ec_first_name, 'ec_last_name': ec_last_name, 'ec_phone_number': ec_phone_number, 'ec_email_address': ec_email_address, 'primary_needs': primary_needs})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
