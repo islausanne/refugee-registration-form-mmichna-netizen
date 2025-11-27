@@ -97,5 +97,25 @@
     "relationship": "father",
     "ec_first_name": "Marta",
     "ec_last_name": "Michna"
+  },
+  {
+    "first_name": "Marta",
+    "last_name": "Michna",
+    "nationality": "CH",
+    "gender": "female",
+    "date_of_birth": "2025-11-14",
+    "languages_spoken": "French",
+    "email_address": "mmichna@islstudent.ch",
+    "phone_number": "+41 79 105 58 06",
+    "current_address": "Chemin de Riant-Coin 31, La Conversion",
+    "postal_code": "1093",
+    "relationship": "father",
+    "ec_first_name": "marta",
+    "ec_last_name": "michna",
+    "ec_phone_number": "+41 79 105 58 06",
+    "ec_email_address": "",
+    "primary_needs": "food",
+    "special_requirements": "as",
+    "reason_refuge": "ahewfiukshdjkgauy tc4bilnqt rwatsdgfudj, jaeywcilqtneryuyiuryciuyuiqeaskACHJHDJHGHSGHJDGeuyeuwiywuFBBFZXG DGAIEGJ"
   }
 ]
