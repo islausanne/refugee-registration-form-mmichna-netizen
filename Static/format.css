@@ -1,55 +1,82 @@
-body { background:#ffffff; font-family: Arial; }
+body {
+    background:#ffffff;
+    font-family: Arial;
+    font-size: 14px;
+}
 
-/* layout for 4 boxes */
+/* wider form */
+form {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 2 wide columns for the boxes */
 .box-container {
-    width:90%;
-    margin:0px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
-/* each section = gray box */
+/* gray box styling */
 .form-section {
-    width:48%;
     background:#e6e6e6;
-    padding-right:50px;
-    padding-left:30px;
-    margin-top:20px;
-    border-radius:12px;
-    box-shadow:0 3px 6px rgba(0,0,0,0.12);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
 }
 
-/* spacing inside fields */
-label { display:block; margin-top:10px; font-weight:bold; }
-
-input,select,textarea {
-    width:100%;
-    margin-top:4px;
-    padding:10px;
-    border-radius:6px;
-    border:1px solid #bfbfbf;
-    margin-bottom:8px;
+/* labels */
+label {
+    display:block;
+    margin-top: 12px;
+    font-weight:bold;
+    font-size: 14px;
 }
 
-textarea { height:70px; }
+/* UNIFORM INPUT BOXES */
+input,
+select,
+textarea {
+    width: 100%;
+    height: 48px;               /* same height */
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #ffffff;        /* white background */
+    border: 1px solid #bfbfbf;
+    border-radius: 8px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+/* textarea: taller but same style */
+textarea {
+    height: 120px !important;
+    resize: vertical;
+}
 
 /* submit button */
-button{
+button {
     background:#0059ff;
     color:white;
-    padding:12px 30px;
+    padding:14px 35px;
     border:none;
-    border-radius:6px;
-    margin:30px auto;
+    border-radius: 8px;
+    margin: 40px auto;
     display:block;
-    font-size:18px;
+    font-size:16px;
+    cursor:pointer;
 }
 
-button:hover{ background:#003bb3; }
+button:hover {
+    background:#003bb3;
+}
 
-/* responsive stack on small screens */
+/* mobile layout */
 @media(max-width:900px){
-    .form-section{ width:100%; }
+    .box-container {
+        grid-template-columns: 1fr;
+    }
 }
 

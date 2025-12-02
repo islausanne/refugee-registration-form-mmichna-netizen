@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<br><p style="text-align:margin-top:5px;">Please fill out all required (*) fields</p>
+<br><p style="text-align:margin-top:5px; font-size: 18px;">Please fill out all required (*) fields</p>
 
 
 <form method="POST" action="{{ url_for('submit_form') }}">
@@ -10,7 +10,8 @@
 
 <!-- █████ BOX 1 █████ -->
 <div class="form-section">
-    <h2><img src="{{ url_for('static', filename='person_icon.png') }}" width="22" style="vertical-align:middle;margin-right:5px;"> Personal Information</h2>
+    <h2><img src="{{ url_for('static', filename='person_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Personal Information</h2>
+    <hr>
 
     <label>First Name *</label>
     <input type="text" name="first_name" required>
@@ -44,7 +45,9 @@
 
 <!-- █████ BOX 2 █████ -->
 <div class="form-section">
-    <h2><img src="{{ url_for('static', filename='phone_icon.png') }}" width="22" style="vertical-align:middle;margin-right:5px;"> Contact Information</h2>
+    <h2><img src="{{ url_for('static', filename='phone_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Contact Information</h2>
+
+    <hr>
 
     <label>Email Address</label>
     <input type="email" name="email_address" placeholder="example@mail.com">
@@ -62,7 +65,8 @@
 
 <!-- █████ BOX 3 █████ -->
 <div class="form-section">
-    <h2><img src="{{ url_for('static', filename='emergency_icon.png') }}" width="24" style="vertical-align:middle;margin-right:5px;"> Emergency Contact</h2>
+    <h2><img src="{{ url_for('static', filename='emergency_icon.png') }}" width="35" style="vertical-align:middle;margin-right:5px;"> Emergency Contact</h2>
+    <hr>
 
     <label>Relationship *</label>
     <select name="relationship" required>
@@ -87,7 +91,8 @@
 
 <!-- █████ BOX 4 █████ -->
 <div class="form-section">
-    <h2><img src="{{ url_for('static', filename='needs_icon.png') }}" width="22" style="vertical-align:middle;margin-right:5px;"> Needs & Additional Information</h2>
+    <h2><img src="{{ url_for('static', filename='needs_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Needs & Additional Information</h2>
+    <hr>
 
     <label>Primary Needs *</label>
     <textarea name="primary_needs" required placeholder="Food, shelter, medical help..."></textarea>
