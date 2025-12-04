@@ -36,7 +36,7 @@
     </select>
 
     <label>Date of Birth *</label>
-    <input type="date" name="date_of_birth" required>
+    <input type="date" name="date_of_birth" id="date" required>
 
     <label>Languages Spoken</label>
     <input type="text" placeholder="English, Arabic, Somali..." name="languages_spoken">
@@ -110,4 +110,25 @@
 
 </form>
 
+<script> <!-- THIS IS FOR DATE VALIDATION (NOT IN THE FUTURE) (JAVASCRIPT) -->
+const dateField = document.getElementById('date');
+const dateError = document.getElementById('date-error');
+
+dateField.addEventListener('input', () => {
+  const today = new Date();
+  const selectedDate = new Date(dateField.value);
+
+  if (selectedDate > today) {
+    dateField.setCustomValidity("❗Date of Birth cannot be in the future");
+  } else {
+    dateField.setCustomValidity("");
+    dateError.textContent = "";
+  }
+
+  // Show/hide exclamation mark next to the input
+  document.getElementById('date-error-icon').style.display = selectedDate > today ? 'inline' : 'none';
+
+  updateTopErrors();
+});
+</script>
 {% endblock %}
