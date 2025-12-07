@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Refugee Registration</title>
+
+<!--Inline CSS for basic page styling-->
   <style>
     body { font-family: Arial, sans-serif; margin: 40px; }
     nav a { margin-right: 15px; text-decoration: none; color: #0066cc; font-size: 18px;}
@@ -10,20 +12,27 @@
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
     th { background-color: #f0f0f0; }
   </style>
+
+<!--External CSS file-->
     <link rel="stylesheet" href="static/format.css">
 </head>
 <body>
 <center>
+
+<!--Image for the top of the page-->
     <h1>
         <img src="static/logo.png" width="18%" style="vertical-align: middle; margin-right: 8px">
     </h1>
 </center>
 
+<!--Navigation bar-->
   <nav>
       <a href="/">Home</a>
       <a href="/register">Register</a>
       <a href="/view">View Past Refugees</a>
   </nav>
+
+<!--Flask Flash message display-->
   <hr>
   {% with messages = get_flashed_messages() %}
     {% if messages %}

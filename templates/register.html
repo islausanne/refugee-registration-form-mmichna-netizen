@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<br><p style="text-align:margin-top:5px; font-size: 18px;">Please fill out all required (*) fields</p>
+<br><p style="text-align:margin-top:5px; font-size: 18px;">
+    Please fill out all required (*) fields
+</p>
 
-
+<!--Form submits POST data to the Flask root submit_form()-->
 <form method="POST" action="{{ url_for('submit_form') }}">
 
 <div class="box-container">
@@ -12,7 +14,7 @@
 <div class="form-section">
     <h2><img src="{{ url_for('static', filename='person_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Personal Information</h2>
     <hr>
-
+<!--All the fields that are put into the first box-->
     <label>First Name *</label>
     <input type="text" name="first_name" required>
 
@@ -48,7 +50,7 @@
     <h2><img src="{{ url_for('static', filename='phone_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Contact Information</h2>
 
     <hr>
-
+<!--All the fields that are put into the second box-->
     <label>Email Address</label>
     <input type="email" name="email_address" placeholder="example@mail.com">
 
@@ -67,7 +69,7 @@
 <div class="form-section">
     <h2><img src="{{ url_for('static', filename='emergency_icon.png') }}" width="35" style="vertical-align:middle;margin-right:5px;"> Emergency Contact</h2>
     <hr>
-
+<!--All the fields that are put into the third box-->
     <label>Relationship *</label>
     <select name="relationship" required>
         <option disabled selected>Select relationship</option>
@@ -94,6 +96,7 @@
     <h2><img src="{{ url_for('static', filename='needs_icon.png') }}" width="30" style="vertical-align:middle;margin-right:5px;"> Needs & Additional Information</h2>
     <hr>
 
+<!--All the fields that are put into the fourth box-->
     <label>Primary Needs *</label>
     <textarea name="primary_needs" required placeholder="Food, shelter, medical help..."></textarea>
 
@@ -105,12 +108,13 @@
 </div>
 
 </div>
-
+<!--Submit button-->
 <button type="submit">Submit Form</button>
 
 </form>
 
-<script> <!-- THIS IS FOR DATE VALIDATION (NOT IN THE FUTURE) (JAVASCRIPT) -->
+<!-- THIS IS FOR DATE VALIDATION (NOT IN THE FUTURE) (JAVASCRIPT) -->
+<script>
 const dateField = document.getElementById('date');
 const dateError = document.getElementById('date-error');
 
@@ -118,13 +122,13 @@ dateField.addEventListener('input', () => {
   const today = new Date();
   const selectedDate = new Date(dateField.value);
 
+    // Prevent future dates in the date_of_birth field.
   if (selectedDate > today) {
     dateField.setCustomValidity("❗Date of Birth cannot be in the future");
   } else {
     dateField.setCustomValidity("");
     dateError.textContent = "";
   }
-
   // Show/hide exclamation mark next to the input
   document.getElementById('date-error-icon').style.display = selectedDate > today ? 'inline' : 'none';
 

@@ -16,9 +16,10 @@ def index():
 def register():
     return render_template('register.html')
 
-# Handle form submission (students will add JSON save code here)
+# Handle form submission
 @app.route('/submit', methods=['POST'])
 def submit_form():
+    #Retrieves all the form fields sent by POST.
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     nationality = request.form['nationality']
@@ -38,42 +39,51 @@ def submit_form():
     special_requirements=request.form['special_requirements']
     reason_refuge=request.form['reason_refuge']
 
-    # Check if file exists
+# Check if file exists
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
             data = json.load(file)
     else:
+#Creates a new list if no file exists.
         data = []
 
-    # Add the new registration
+# Add the new registration
     data.append({'first_name': first_name, 'last_name': last_name, 'nationality': nationality, 'gender': gender, 'date_of_birth': date_of_birth, 'languages_spoken': languages_spoken, 'email_address': email_address, 'phone_number': phone_number, 'current_address': current_address, 'postal_code': postal_code, 'relationship': relationship, 'ec_first_name': ec_first_name, 'ec_last_name': ec_last_name, 'ec_phone_number': ec_phone_number, 'ec_email_address': ec_email_address, 'primary_needs': primary_needs, 'special_requirements': special_requirements, 'reason_refuge': reason_refuge})
 
-    # Save all registrations back to the file
+# Save all registrations back to the file
     with open('registrations.json', 'w') as file:
         json.dump(data, file, indent=2)
 
     flash('Registration submitted successfully!')
+#Redirect to home page after submission.
     return redirect(url_for('index'))
 
 # Display stored registrations (students will add JSON reading code here)
 @app.route('/view')
 def view_registrations():
     if os.path.exists('registrations.json'):
+        #Load data if the file exists.
         with open('registrations.json', 'r') as file:
             data = json.load(file)
     else:
+        #If no file exists, display an empty table.
         data = []
     return render_template('view.html', registrations=data)
 
+# Delete saved registrations from view
 @app.route('/delete')
 def delete_registration():
     if os.path.exists('registrations.json'):
+        #Delete the file.
         os.remove('registrations.json')
+        #Reset data list to empty.
         data=[]
 
     flash('Registration deleted successfully!')
+#Reload the view page with nothing inside.
     return render_template('view.html', registrations=data)
 
+#Run the app
 if __name__ == '__main__':
     app.run(debug=True)
 

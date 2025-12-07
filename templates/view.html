@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Registered Refugees</h2>
+
+<!--Check if any registration are there from flask-->
 {% if registrations %}
+
+<!--Table displaying all refugee entries.-->
   <table>
     <tr>
+<!-- Table headers describing each field.-->
         <th>First Name</th>
         <th>Last Name</th>
         <th>Country</th>
@@ -23,8 +28,10 @@
         <th>Special requirements</th>
         <th>Reason For seeking Refuge</th>
     </tr>
+<!--Loops through each registration object.-->
     {% for person in registrations %}
       <tr>
+<!--Display store data for each refugee.-->
         <td>{{ person.first_name }}</td>
         <td>{{ person.last_name }}</td>
         <td>{{ person.nationality }}</td>
@@ -46,8 +53,11 @@
       </tr>
     {% endfor %}
   </table>
+<!--Button linking to a route that deletes all data.-->
 <a href="/delete"><button>Delete all the data</button></a>
 {% else %}
+
+<!--Message if there is no registrations-->
   <p>No registrations found yet.</p>
 {% endif %}
 {% endblock %}
